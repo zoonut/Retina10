@@ -1,0 +1,41 @@
+
+
+You are a senior Android Camera2 engineer. Edit this camera video recording app for the Xiaomi 12S Ultra (Snapdragon 8+ Gen 1).
+
+1. Core shooting logic:
+
+
+    The app must display the actual supported video resolutions returned by StreamConfigurationMap.getOutputSizes(MediaRecorder::class.java) or SurfaceTexture::class.java at runtime. Do not hardcode 4000x3000 or other stock camera-specific sizes. List all supported sizes in a dropdown menu and let me select.
+
+    When initializing the MediaCodec encoder, use HEVC (H.265), and force the following color settings to preserve post-production grading space:
+
+        KEY_COLOR_STANDARD = COLOR_STANDARD_BT2020
+
+        KEY_COLOR_TRANSFER = COLOR_TRANSFER_HLG
+
+        KEY_PROFILE = HEVCProfileMain10
+
+    In the CaptureRequest, force settings: CONTROL_EDGE_MODE = OFF, CONTROL_NOISE_REDUCTION_MODE = OFF (or MINIMAL if OFF is not supported). This is to reduce ISP heat generation and preserve organic texture for DaVinci Resolve.
+
+2. Dual-lens simultaneous recording (backup mode):
+
+    Check whether CameraManager.getConcurrentCameraIds() supports the combination of the main camera + ultra-wide.
+
+    If supported, implement a "Dual Stream" mode: simultaneously create two MediaCodec encoders and two MediaRecorder instances, writing to two separate MP4 files.
+
+   
+3. Thermal and low-light optimization:
+
+    Use PowerManager.addThermalStatusChangedListener. When thermal status ≥ THERMAL_STATUS_MODERATE, automatically lower the preview resolution (e.g., to 1280x720) and lower the encoder bitrate by 20%, displaying a "Thermal throttling" notice.
+
+    Since I often shoot under LED/halogen lights and use the phone's flashlight, ensure FLASH_MODE_TORCH can be enabled independently of recording, and the torch remains on during recording (do not let TEMPLATE_RECORD automatically turn off the torch).
+
+5. Project configuration:
+
+    minSdk 35 to ensure HLG and concurrent camera API stability.
+
+    Request CAMERA, RECORD_AUDIO, FLASHLIGHT permissions in AndroidManifest.xml.
+
+    Use Kotlin coroutines to handle CameraDevice.StateCallback and CameraCaptureSession callbacks to avoid blocking the main thread.
+
+First, generate the complete Kotlin skeleton code for MainActivity.kt and DualVideoRecorder.kt, with detailed comments. After I confirm the logic is correct, I will ask you to supplement the XML layout.

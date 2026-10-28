@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M0,0h108v108h-108z"
+        android:fillColor="#0A0A0C" />
+    <!-- Subtle aperture ring graphic -->
+    <path
+        android:pathData="M54,54m-42,0a42,42 0,1,1 84,0a42,42 0,1,1 -84,0"
+        android:strokeWidth="1.5"
+        android:strokeColor="#27272A" />
+    <path
+        android:pathData="M54,54m-48,0a48,48 0,1,1 96,0a48,48 0,1,1 -96,0"
+        android:strokeWidth="1"
+        android:strokeColor="#1F1F23" />
+</vector>

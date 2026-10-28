@@ -1,0 +1,11 @@
+{
+  "name": "Retina 7 Pro Cinema Camera",
+  "description": "Professional cinema recording app for Xiaomi 12S Ultra featuring Leica color science, HLG 10-bit HDR, dual recording, DaVinci Resolve grading mode, and torch perimeter boost.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

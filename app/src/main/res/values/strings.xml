@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Retina 7 Pro Cinema Camera</string>
+    <string name="app_subtitle">Calibrated for Xiaomi 12S Ultra</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="torch">Torch</string>
+    <string name="settings">Settings</string>
+    <string name="gallery">Clips Gallery</string>
+    <string name="dual_recording">Dual Lens Recording</string>
+    <string name="thermal_throttling">Thermal Throttling Active (-20% Bitrate)</string>
+    <string name="leica_hlg">Leica HLG 10-Bit BT.2020 Log</string>
+    <string name="leica_authentic">Leica Authentic</string>
+    <string name="leica_vibrant">Leica Vibrant</string>
+    <string name="leica_monochrom">Leica Monochrom</string>
+    <string name="leica_monochrom_hc">Leica Monochrom HC</string>
+    <string name="vignette_comp">Flat-Field Anti-Vignette</string>
+    <string name="torch_flattening">Center Torch Hotspot Flattening</string>
+</resources>
